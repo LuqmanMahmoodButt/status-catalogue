@@ -6,21 +6,23 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Sign In</title>
 
+    <%- include('../partials/nav.ejs') %>
 </head>
+
 <body>
-
-
-    <h1>Sign In</h1>
-    <form action="/auth/sign-in" method="POST">
-
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username"/>
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password"/>
-       
-        <button type="submit">Sign In</button>
-      
-    </form>
+    <div class="sign-in-form"> 
+        <h1>Sign In</h1>
+        <form  class="user-input" action="/auth/sign-in" method="POST">
+            
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username"/>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password"/>
+            
+            <button type="submit">Sign In</button>
+            
+        </form>
+    </div>
 </body>
 </html>

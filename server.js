@@ -6,10 +6,9 @@ const mongoose = require("mongoose")
 const methodOverride = require("method-override"); // new
 const morgan = require("morgan"); //new
 const path = require("path")
-
+const Status = require('./models/status')
 
 const app = express()
-app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
@@ -17,12 +16,12 @@ app.use(morgan("dev"));
 
 const authController = require("./controllers/auth.js")
 
-// app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, "public")))
 
 mongoose.connect(process.env.MONGODB_URI)
 
 
-app.use("/auth", authController);
+
 
 app.use(
     session({
@@ -30,24 +29,35 @@ app.use(
         resave: false,
         saveUninitialized: true
     })
-)
+    )
 app.use(function (req, res, next) {
     res.locals.user = req.session.user;
     next();
 });
 
+app.use("/auth", authController);
+
 app.get("/", (req, res) => {
-    res.render('home.ejs', { user: req.session.user })
+    res.render('home.ejs')
+})
+// ! GET request 
+app.get('/add-status', (req, res) => {
+    res.render('new.ejs')
 })
 
-app.get('/add-status', (req, res) => {
-    res.render('new.ejs', {
+app.get('/status', async (req, res) => {
+    // i need to get the actual fries
+    const status = await Status.find()
+    // send them back
+    res.render('status.ejs', {
+        status: status,
         user: req.session.user
     })
 })
 
 
 
+// ! POST request 
 app.post('/status/:statussId', async (req, res) => {
 
     if (req.session.user) {
@@ -73,7 +83,7 @@ app.post("/status", async (req, res) => {
         try {
             req.body.createdBy = req.session.user.userId;
             const status = await Status.create(req.body)
-
+            status.save()
             req.session.message = "Post was made.";
 
             res.redirect('/status')
