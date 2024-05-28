@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+    <body>
+        <%- include('./partials/nav') %>
+        <h1> Add a new Status</h1>
+
+        <form action="/status" method="POST">
+            <label for="status">Status:</label>
+            <input type="text" name="name" id="name">
+
+            <button type="submit">Post</button>
+        </form>
+
+    </body>
+
+</html>

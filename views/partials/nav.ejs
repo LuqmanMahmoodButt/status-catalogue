@@ -1,0 +1,16 @@
+<nav>
+    <a href="/">Home</a>
+    <a href="/status">Posts</a>
+    <a href="/add-status">Add Post</a>
+  
+    <% if (user) { %>
+      <h1> Welcome to the app, <%= user.username %>!</h1>
+      <a href="/auth/sign-out">Sign Out </a>
+      <% } else { %>
+          <p>
+              <a href="/auth/sign-up">Sign Up </a>
+              <br>
+              <a href="/auth/sign-in">Sign In </a>
+          </p>
+          <% } %>
+  </nav>
