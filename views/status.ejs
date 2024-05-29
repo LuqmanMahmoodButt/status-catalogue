@@ -9,18 +9,36 @@
 
 </head>
 <%- include('./partials/nav') %>
-<% if (typeof message !== 'undefined') { %>
-  <p><%= message %></p>
-  <% } %>
-  <body>
-    <h1 class="post-title">Public Post's</h1>
-    <ul>
-      <% status.forEach(status=> { %>
-        <h2 class="user-post">
-            <%= status.story %>
-        </h2>
-        <% }) %>
-    </ul>
-  </body>
+  <% if (typeof message !=='undefined' ) { %>
+    <p>
+      <%= message %>
+    </p>
+    <% } %>
+
+      <body>
+        <h1 class="post-title">Public Post's</h1>
+        <div class="post-box">
+          <% status.forEach(status=> { %>
+            <div class="user-post">
+              <% if (user) { %>
+                <p>
+                  <%= status.createdBy.username %>
+                </p>
+                <%= status.story %>
+                  <% if (status.createdBy.equals(user._id)) { %>
+                    <div class="edit-del-button">
+                      <form action="/status/<%=status._id%>?_method=DELETE" method="POST">
+                        <button type="submit">Delete <%= status.name %></button>
+                      </form>
+                      <a href="/status/<%= status._id %>/edit">Edit <%= status.name %></a>
+                    </div>
+                    <% } %>
+                      <% } else { %>
+                        <p>Please Sign-In or Sign-Up </p>
+                        <% } %>
+            </div>
+            <% }) %>
+        </div>
+      </body>
 
 </html>

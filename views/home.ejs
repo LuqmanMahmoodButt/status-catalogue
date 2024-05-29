@@ -11,6 +11,13 @@
 <%- include('./partials/nav') %>
 
   <body>
-    <h1 class="home-title">Make A Post For The Day </h1>
+    <% if (user) { %>
+      <p> <%= user.username %>!</p>
+      <h1 class="home-title">Make A Post For The Day </h1>
+      <% } else { %>
+        <h1 class="home-title">Please Sign-In or Sign-Up To Make A Post </h1>
+        <h1>Make A Post For The Day </h1>
+            <% } %>
+    
   </body>
 </html>

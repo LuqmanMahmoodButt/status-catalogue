@@ -13,7 +13,8 @@ router.get("/new", (req, res) => {
         if (!req.body.name.trim()) {
             throw new Error("Invalid input: The name field cannot be empty!");
           }
-
+          req.body.createdBy = req.session.user._id
+          console.log(req.body);
       await Status.create(req.body);
       res.redirect("/status");
     } catch (error) {
@@ -21,12 +22,6 @@ router.get("/new", (req, res) => {
       res.render("error.ejs", {error: error.message})
     }
   });
-
-router.post("/", async (req, res) => {
-  await Status.create(req.body);
-  res.redirect("/status");
-});
-
 
 
 router.get("/", async (req, res) => {

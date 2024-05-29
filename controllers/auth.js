@@ -64,7 +64,7 @@ router.post('/sign-in', async (req, res) => {
         return res.send('Password must have at least one uppercase letter')
     }
 
-    if(req.body.password.length < 8 ) {
+    if(req.body.password.length < 3 ) {
         return res.send("Password must have 8 characters long")
     }
 

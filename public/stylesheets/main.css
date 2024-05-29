@@ -4,13 +4,37 @@ body {
 }
 
 .user-post {
-    color: rgb(156, 0, 0);
+    color: rgb(17, 170, 17);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid black
+    border: solid black;
+    min-width: 500px;
+    max-width: 100%;
+    background-color: black;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.edit-del-button {
+    display: flex;
+    gap: 30vw;
 }
 
+.edit-section {
+    display: flex;
+    justify-content: center;
+}
+.post-box {
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: auto;
+    width: 700px;
+    max-width: 100%;
+    gap: 20px;
+}
 .post-title {
     color: rgb(0, 0, 0);
     display: flex;
@@ -33,6 +57,8 @@ body {
     cursor: pointer;
     border: none;
     outline: none;
+    font-size: 30px;
+    margin: auto;
 }
 
 .home-title {
