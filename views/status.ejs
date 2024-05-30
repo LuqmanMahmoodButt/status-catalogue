@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="/stylesheets/publicpost.css">
 
 </head>
 <%- include('./partials/nav') %>
@@ -21,23 +21,39 @@
           <% status.forEach(status=> { %>
             <div class="user-post">
               <% if (user) { %>
-                <p>
+
+                <div class="username-post">
                   <%= status.createdBy.username %>
-                </p>
-                <%= status.story %>
+                </div>
+                <div class="img-and-status">
+                  <div class="status-img">
+                    <% if (status.image) { %>
+                      <img class="img-input" src="<%=status.image%>" alt="<%= status.image %>">
+                      <% } %>
+                  </div>
+                  <div class="post-message">
+                    <%= status.story %>
+                  </div>
+                </div>
+                <div class="post-btn">
                   <% if (status.createdBy.equals(user._id)) { %>
                     <div class="edit-del-button">
-                      <form action="/status/<%=status._id%>?_method=DELETE" method="POST">
-                        <button type="submit">Delete <%= status.name %></button>
-                      </form>
-                      <a href="/status/<%= status._id %>/edit">Edit <%= status.name %></a>
+                      <div class="delete-button">
+                        <form action="/status/<%=status._id%>?_method=DELETE" method="POST">
+                          <button class="delete-btn" type="submit">Delete <%= status.name %> </button>
+                        </form>
+                      </div>
+                      <button class="edit-btn">
+                        <a href="/status/<%= status._id %>/edit" class="edit-button">Edit <%= status.name %></a>
                     </div>
+                    </button>
                     <% } %>
                       <% } else { %>
                         <p>Please Sign-In or Sign-Up </p>
                         <% } %>
+                </div>
+                <% }) %>
             </div>
-            <% }) %>
         </div>
       </body>
 

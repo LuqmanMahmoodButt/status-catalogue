@@ -1,29 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Jaro:opsz@6..72&family=Pacifico&family=Teko:wght@300..700&display=swap');
 
+
 body {
     background-color:#4c5966; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("https://wallpapercrafter.com/desktop/33177-Spain-4K-4k-wallpaper-pink-sky-clouds-ocean-bridge-reflection.jpg");
-
+    background-image: url("https://getwallpapers.com/wallpaper/full/e/8/5/719190-gorgerous-beautiful-background-images-1920x1200-for-iphone-7.jpg");
+   
+ 
 }
 
-.edit-section{
-    display: flex;
-    
-    border: white solid 3px;
-    background-color: rgb(17 20 49 / 88%);
-    margin-left: 36vw;
-    margin-right: 36vw;
-    margin-top: 20vh;
-    height: 50vh;
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-}
 .user-post {
     color: rgb(17, 170, 17);
     display: flex;
@@ -258,13 +245,13 @@ body {
 
 .new-post {
     border: white solid 3px;
-    background-color: rgb(17 20 49 / 88%);
+    background-color:rgb(17, 20, 49);
     margin-left: 36vw;
     margin-right: 36vw;
     margin-top: 20vh;
     height: 50vh;
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    border-radius: 20px;
+    box-shadow: rgba(255, 0, 0, 0.1) 1px 2px 4px;
 }
 .status {
     color:#FFFFFF;
@@ -286,15 +273,21 @@ body {
     border: white solid 3px;
     height: 200vh;
 
-
 }
 
 .homepage-username {
     border: white solid 3px;
     
+    
 }
 
 .homepage-content {
     border: white solid 3px;
-
+    background-color:rgba(17, 20, 49, 0.562);
+    margin-left: 36vw;
+    margin-right: 36vw;
+    margin-top: 20vh;
+    height: 50vh;
+    border-radius: 20px;
+    box-shadow: rgba(255, 0, 0, 0.1) 1px 2px 4px;
 }

@@ -5,19 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/main.css">
+  <link rel="stylesheet" href="/stylesheets/homepage.css">
 </head>
 
 <%- include('./partials/nav') %>
 
   <body>
     <% if (user) { %>
-      <p> <%= user.username %>!</p>
-      <h1 class="home-title">Make A Post For The Day </h1>
-      <% } else { %>
-        <h1 class="home-title">Please Sign-In or Sign-Up To Make A Post </h1>
-        <h1>Make A Post For The Day </h1>
+      <div classname="homepage-main">
+        <div className="homepage-username">
+            <%= user.username %>!
+          <% } else { %>
             <% } %>
-    
+          </div>
+          <div class="homepage-content">
+            <h1>We’re glad you’re here! Explore, engage, and enjoy the content.<br> Don't forget to Sign In/Up to join the convo join the conversation.</h1>
+          </div>
+        </div>
+      </div>
   </body>
+
 </html>

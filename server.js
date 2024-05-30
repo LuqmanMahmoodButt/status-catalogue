@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 
-const authController = require("./controllers/auth.js")
+const authController = require("./controllers/auth.js");
+const { Console } = require('console');
 
 app.use(express.static(path.join(__dirname, "public")))
 
@@ -73,12 +74,14 @@ app.get('/status/:statusId', async (req, res) => {
 })
 
 app.get("/status/:statusId/edit", async (req, res) => {
-    const foundStatus = await Status.findById(req.params.statusId);
+    const findStatus = await Status.findById(req.params.statusId);
     res.render("edit.ejs", {
-        status: foundStatus,
+        status: findStatus,
         user: req.session.user
     });
 });
+
+
 
 // ! POST request 
 app.post('/status/:statussId', async (req, res) => {
@@ -134,7 +137,7 @@ app.put("/status/:statusId", async (req, res) => {
 // ! DELETE request 
 app.delete("/status/:statusId", async (req, res) => {
     const createdById = await Status.findById(req.params.statusId)
-    console.log(createdById)
+    // console.log(createdById)
     if (req.session.user) {
         if (createdById.createdBy.equals(req.session.user._id)) {
             try {

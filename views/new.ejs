@@ -9,14 +9,18 @@
 </head>
     <body>
         <%- include('./partials/nav') %>
-        <h1 class="status"> Add a new Status</h1>
+        <div class="new-post">
+            <h1 class="status"> Add a new Status</h1>
+            <form class="status-form" action="/status" method="POST">
 
-        <form class="status-form" action="/status" method="POST">
-            <label for="story">Status:</label>
-            <input type="text" name="story" id="story">
-
-            <button type="submit">Post</button>
-        </form>
+                <label for="story">Status:</label>
+                <textarea type="text" name="story" id="story"></textarea>
+                <br>
+                <label for="imgage">Image URL:</label>
+                <input type="url" name="image" id="image">
+                <button type="submit">Post</button>
+            </form>
+        </div>
 
     </body>
 
