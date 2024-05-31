@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/stylesheets/homepage.css">
+  <title>Status Catalogue</title>
+  <link rel="stylesheet" href="/stylesheets/home.css">
 </head>
 
 <%- include('./partials/nav') %>
 
   <body>
     <% if (user) { %>
-      <div classname="homepage-main">
-        <div className="homepage-username">
-            <%= user.username %>!
+      <div class="homepage-main">
+        <div class="homepage-username">
+           <%= user.username %>!
           <% } else { %>
             <% } %>
           </div>
           <div class="homepage-content">
-            <h1>We’re glad you’re here! Explore, engage, and enjoy the content.<br> Don't forget to Sign In/Up to join the convo join the conversation.</h1>
+            <h1>We’re glad you’re here!<br><br> Explore, engage, and enjoy the content.<br><br> Don't forget to Sign In/Up </h1>
           </div>
         </div>
       </div>

@@ -6,6 +6,8 @@
 
 body {
     background-color:#4c5966; 
+    background-repeat: no-repeat;
+    background-size: cover;
     background-image: url("https://s.itl.cat/pngfile/s/244-2442964_damask-vintage-wallpaper-free-photo-damask-pattern-background.jpg");
 }
 
@@ -25,8 +27,8 @@ body {
     flex-direction: column;
     align-items: center;
     border: solid black;
-    /* min-width: 500px;
-    max-width: 500px; */
+    min-width: 500px;
+    max-width: 500px;
     background-color:rgb(30 56 19);
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(35, 18, 75, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -50,7 +52,7 @@ body {
 }
 
 .post-title {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -157,6 +159,7 @@ body {
     max-width: 200px;
     font-family: "Edu TAS Beginner", cursive;
     color: #ced5dd;
+    font-size: 25px;
     
 }
 .post-btn {

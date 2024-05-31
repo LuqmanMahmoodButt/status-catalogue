@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Jaro:opsz@6..72&family=Pacifico&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 body {
     background-color:#4c5966; 
@@ -14,7 +15,6 @@ body {
 
 .edit-section{
     display: flex;
-    
     border: white solid 3px;
     background-color: rgb(17 20 49 / 88%);
     margin-left: 36vw;
@@ -102,18 +102,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+
 }
 
 .status-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+
 }
 
 .sign-in-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+
 }
 
 .user-input{
@@ -291,6 +297,9 @@ body {
 
 .homepage-username {
     border: white solid 3px;
+    color: white;
+    font-size: 20px;
+
     
 }
 

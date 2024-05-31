@@ -15,7 +15,7 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 
 const authController = require("./controllers/auth.js");
-const { Console } = require('console');
+
 
 app.use(express.static(path.join(__dirname, "public")))
 
