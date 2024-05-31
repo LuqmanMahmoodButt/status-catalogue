@@ -1,8 +1,8 @@
 <nav class="navbar">
   <a href="/" class="nav-bar">Home</a>
-  <a href="/status" class="nav-bar">Posts</a>
-  <a href="/add-status" class="nav-bar">Add Post</a>
   <% if (user) { %>
+    <a href="/status" class="nav-bar">Posts</a>
+    <a href="/add-status" class="nav-bar">Add Post</a>
     <a href="/auth/sign-out" class="nav-bar">Sign Out </a>
     <% } else { %>
       <a href="/auth/sign-up" class="nav-bar">Sign Up </a>
