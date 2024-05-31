@@ -18,7 +18,8 @@
     "method-override": "^3.0.0",
     "mongoose": "^8.4.0",
     "morgan": "^1.10.0",
-    "node": "^18.20.3"
+    "node": "^18.20.3",
+    "serverless-http": "^3.2.0"
   },
   "description": ""
 }
