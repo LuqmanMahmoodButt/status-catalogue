@@ -155,7 +155,11 @@ app.delete("/status/:statusId", async (req, res) => {
     }
 });
 
-
+async function connectToDb() {
+    await mongoose.connect(process.env.MONGODB_URI);
+  }
+  
+  connectToDb()
 
 
 
